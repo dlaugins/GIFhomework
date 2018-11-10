@@ -1,21 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
-    <meta charset="utf-8">
-    <title>Sports </title>
+    <meta charset="UTF-8">
+    <title>Giphy Homework</title>
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+    <div class="jumbotron jumbotron-fluid" id="jumbo">
+        <div class="container">
+            <h1>Add a Sport and see some Gifs</h1>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1">
+        </div>
+        <div class="col-md-7" id=" Gif buttons">
+        </div>
+        <div class="col-md-3">
+            <button id="add-button">Add a sport</button>
+            <input type="text" id="input_text">
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
 
 
-    <!-- <button data-sport="football">football</button>
-    <button data-sport="basketball">basketball</button>
-    <button data-sport="gymnastics">gymnastics</button> -->
+
+
+
+
     <div id="buttons-appear-here">
     </div>
-    <button id="add-button">Add a sport</button>
-    <input type="text" id="input_text">
+    <!-- <button id="add-button">Add a sport</button> -->
+    <!-- <input type="text" id="input_text"> -->
     <div id="gifs-appear-here">
 
     </div>
@@ -50,12 +83,12 @@
         // Adding click event listen listener to all buttons
         // $("button").on("click", function () {
         $(document).on('click', '.gifbutton', function () {
-         
+
 
             // Grabbing and storing the data-sport property value from the button
             var sports = $(this).attr("data-sport");
 
-            // Constructing a queryURL using the animal name
+            // Constructing a queryURL using the sport name
             var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
                 sports + "&api_key=dc6zaTOxFJmzC&limit=10";
 
